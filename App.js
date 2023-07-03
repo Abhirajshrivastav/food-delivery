@@ -6,8 +6,8 @@ import WelcomeScreen from "./Screens/Restaurant/WelcomeScreen";
 const App = () => {
   return (
     // <HomeScreen />
-    <WelcomeScreen />
-    // <RecipeDetailScreen recipe={DATA[0].recipes[1]} />
+    // <WelcomeScreen />
+    <RecipeDetailScreen recipe={DATA[1].recipes[1]} />
    )
   ;
 };
