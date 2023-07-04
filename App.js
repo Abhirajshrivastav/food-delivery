@@ -1,15 +1,17 @@
-import React from "react";
-import RecipeDetailScreen from "./Screens/Restaurant/RecipeDetailScreen";
-import DATA from "./config/Restaurant/DATA";
-import HomeScreen from "./Screens/Restaurant/HomeScreen";
-import WelcomeScreen from "./Screens/Restaurant/WelcomeScreen";
-const App = () => {
-  return (
-    // <HomeScreen />
-    // <WelcomeScreen />
-    <RecipeDetailScreen recipe={DATA[1].recipes[1]} />
-   )
-  ;
-};
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import AppNavigation from './navigation/appNavigation';
 
-export default App;
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import HomeScreen from './screens/HomeScreen';
+// import GameStore from './screens/gameStore';
+
+// const Tab = createBottomTabNavigator();
+
+
+export default function App() {
+  return (
+    <AppNavigation />
+  );
+}

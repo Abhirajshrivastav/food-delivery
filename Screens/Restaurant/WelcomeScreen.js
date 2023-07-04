@@ -8,8 +8,10 @@ import {
 import React from "react";
 import colors from "../../config/Restaurant/colors";
 import SPACING from "../../config/SPACING";
+import { useNavigation } from '@react-navigation/native';
 
 const WelcomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <ImageBackground style={{flex: 1, }} source={require("../../assets/pexels-william-choquette-2641886.jpeg")}>
       <View style={{flex: 1,
@@ -48,7 +50,10 @@ const WelcomeScreen = () => {
             backgroundColor: colors.white ,borderRadius: SPACING * 2 ,
             alignItems: "center",
             marginTop: SPACING * 3
-          }}>
+          }}
+          // onPress={()=> navigation.navigate('Login')}
+          onPress={()=> navigation.navigate('Home')}
+          >
             <Text 
             style={{
               color: colors.black, 

@@ -9,13 +9,13 @@ import {
   View,
 } from "react-native";
 import React from "react";
-
 import SPACING from "../../config/SPACING";
 const { height } = Dimensions.get("window");
 import { Ionicons } from "@expo/vector-icons";
 import colors from "../../config/Restaurant/colors";
 
-const RecipeDetailScreen = ({ recipe }) => {
+const RecipeDetailScreen = ({ route, navigation }) => {
+  const { recipe } = route.params;
   return (
     <>
       <ScrollView>
@@ -29,7 +29,7 @@ const RecipeDetailScreen = ({ recipe }) => {
               flexDirection: "row",
               justifyContent: "space-between",
             }}
-            source={recipe.image}
+            source={recipe?.image}
           >
             <TouchableOpacity
               style={{
@@ -45,6 +45,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                 name="arrow-back"
                 size={SPACING * 2.5}
                 color={colors.gray}
+                onPress={navigation.goBack}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -85,7 +86,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                     fontWeight: "700",
                   }}
                 >
-                  {recipe.name}
+                  {recipe?.name}
                 </Text>
               </View>
               <View
@@ -112,7 +113,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                     color: colors.black,
                   }}
                 >
-                  {recipe.rating}
+                  {recipe?.rating}
                 </Text>
               </View>
             </View>
@@ -143,7 +144,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                     color: colors.gray,
                   }}
                 >
-                  {recipe.time}
+                  {recipe?.time}
                 </Text>
               </View>
               <View
@@ -170,7 +171,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                     color: colors.gray,
                   }}
                 >
-                  {recipe.del_time}
+                  {recipe?.del_time}
                 </Text>
               </View>
               <View
@@ -197,7 +198,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                     color: colors.gray,
                   }}
                 >
-                  {recipe.cooking_time}
+                  {recipe?.cooking_time}
                 </Text>
               </View>
             </View>
@@ -211,7 +212,7 @@ const RecipeDetailScreen = ({ recipe }) => {
               >
                 Ingredients
               </Text>
-              {recipe.ingredients.map((ingredient) => (
+              {recipe?.ingredients.map((ingredient) => (
                 <View
                   style={{
                     marginVertical: SPACING,
@@ -258,7 +259,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                 color: colors.gray,
               }}
             >
-              {recipe.description}
+              {recipe?.description}
             </Text>
           </View>
         </View>
@@ -293,7 +294,7 @@ const RecipeDetailScreen = ({ recipe }) => {
                 marginLeft: SPACING / 2,
               }}
             >
-              $ {recipe.price}
+              $ {recipe?.price}
             </Text>
           </TouchableOpacity>
         </View>

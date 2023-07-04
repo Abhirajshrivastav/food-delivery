@@ -14,12 +14,30 @@ import { Ionicons } from "@expo/vector-icons";
 import SPACING from "../../config/SPACING";
 import colors from "../../config/Restaurant/colors";
 import DATA from "../../config/Restaurant/DATA";
+import { useNavigation } from '@react-navigation/native';
 const { width } = Dimensions.get("window");
 
 const ITEM_WIDTH = width / 2 - SPACING * 3;
 
 const HomeScreen = () => {
   const [activeCategory, setActiveCategory] = useState(0);
+  const navigation = useNavigation();
+
+  // const [selectedRecipe, setSelectedRecipe] = useState(null);
+
+  const handleRecipePress = (id) => {
+    // setSelectedRecipe(recipeId);
+    // navigation.navigate('RecipeDetailScreen', {
+    //   recipe: DATA[activeCategory].recipes.find((recipe) => recipe.id === recipeId),
+    // });
+  navigation.navigate('RecipeDetailScreen', {
+    recipe: DATA[activeCategory].recipes[id-1],
+  });
+  console.log(id);
+  // console.log(DATA[activeCategory].recipes[id])
+}
+  
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -127,6 +145,7 @@ const HomeScreen = () => {
               <TouchableOpacity
                 style={{ width: ITEM_WIDTH, marginBottom: SPACING * 2 }}
                 key={item.id}
+                onPress={() => handleRecipePress(item.id)}
               >
                 <Image
                   style={{
