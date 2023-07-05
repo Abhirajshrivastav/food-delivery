@@ -31,7 +31,7 @@ const HomeScreen = () => {
     //   recipe: DATA[activeCategory].recipes.find((recipe) => recipe.id === recipeId),
     // });
   navigation.navigate('RecipeDetailScreen', {
-    recipe: DATA[activeCategory].recipes[id-1],
+    recipe: DATA[0].recipes[id-1],
   });
   console.log(id);
   // console.log(DATA[activeCategory].recipes[id])
