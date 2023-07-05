@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native'
 import React from 'react'
-// import { themeColors } from '../theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
@@ -10,7 +9,7 @@ export default function SignUpScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
     <SafeAreaView style={{ display: 'flex' }}>
-    <View style={{ flexDirection: 'row', justifyContent: 'start' }}>
+    <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
       <TouchableOpacity 
         onPress={()=> navigation.goBack()}
         style={{
