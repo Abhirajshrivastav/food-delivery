@@ -51,8 +51,8 @@ const WelcomeScreen = () => {
             alignItems: "center",
             marginTop: SPACING * 3
           }}
-          // onPress={()=> navigation.navigate('Login')}
-          onPress={()=> navigation.navigate('Home')}
+          onPress={()=> navigation.navigate('Login')}
+          //onPress={()=> navigation.navigate('Home')}
           >
             <Text 
             style={{
