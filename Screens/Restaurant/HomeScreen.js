@@ -31,9 +31,9 @@ const HomeScreen = () => {
     //   recipe: DATA[activeCategory].recipes.find((recipe) => recipe.id === recipeId),
     // });
   navigation.navigate('RecipeDetailScreen', {
-    recipe: DATA[activeCategory].recipes[id-1],
-  });
-  console.log(id);
+    recipe: DATA[0].recipes[id-1],
+  }); 
+  console.log(id); 
   // console.log(DATA[activeCategory].recipes[id])
 }
   
@@ -41,7 +41,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View style={{ padding: SPACING * 2 }}>
+        <View style={{ padding: SPACING * 2, marginTop : SPACING * 2 }}>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -112,7 +112,10 @@ const HomeScreen = () => {
               <TouchableOpacity
                 style={{ marginRight: SPACING * 3 }}
                 key={index}
-                onPress={() => setActiveCategory(index)}
+                onPress={() => {
+                  setActiveCategory(index)
+                    console.log(index); 
+                }}
               >
                 <Text
                   style={[

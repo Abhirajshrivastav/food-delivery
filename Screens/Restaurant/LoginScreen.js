@@ -20,8 +20,6 @@ export default function LoginScreen() {
           <Image source={require('../../assets/images/login.png')} 
           style={{width: 200, height: 200}} />
         </View>
-        
-        
       </SafeAreaView>
       <View 
         style={{borderTopLeftRadius: 50, borderTopRightRadius: 50}} 
@@ -51,7 +49,6 @@ export default function LoginScreen() {
                         Login
                 </Text>
              </TouchableOpacity>
-            
           </View>
           <Text className="text-xl text-gray-700 font-bold text-center py-5">Or</Text>
           <View className="flex-row justify-center space-x-12">

@@ -18,8 +18,8 @@ export default function AppNavigation() {
         <Stack.Screen name="Home" options={{headerShown: false}} component={HomeScreen} />
         <Stack.Screen name="Welcome" options={{headerShown: false}} component={WelcomeScreen} />
          <Stack.Screen name="RecipeDetailScreen" options={{headerShown: false}} component={RecipeDetailScreen} />
-         {/* <Stack.Screen name="Login" options={{headerShown: false}} component={LoginScreen} />
-        <Stack.Screen name="SignUp" options={{headerShown: false}} component={SignUpScreen} /> */}
+         <Stack.Screen name="Login" options={{headerShown: false}} component={LoginScreen} />
+        <Stack.Screen name="SignUp" options={{headerShown: false}} component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
